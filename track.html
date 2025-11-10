@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Your Order | FastYum</title>
+  <link rel="stylesheet" href="style1.css" />
+  <style>
+    .status-message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ff4500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🍔 FastYum</div>
+    <nav>
+      <a href="index11.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="track.html" class="active">Track Order</a>
+    </nav>
+  </header>
+
+  <section class="track-order">
+    <h2>Track Your Order</h2>
+    <p>Enter your order number below to check the status:</p>
+    <input type="text" id="orderNumber" placeholder="Order #12345" style="padding: 10px; margin: 20px 0; width: 250px; max-width: 90%;">
+    <br>
+    <button onclick="trackOrder()">Track Now</button>
+    <p id="status" class="status-message"></p>
+  </section>
+
+  <footer>
+    <p>© 2025 FastYum. All rights reserved.</p>
+    <div class="social">
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">TikTok</a>
+    </div>
+  </footer>
+
+  <script>
+    function trackOrder() {
+      const orderInput = document.getElementById('orderNumber').value.trim();
+      const status = document.getElementById('status');
+
+      if (!orderInput) {
+        status.textContent = "❌ Please enter your order number.";
+        return;
+      }
+
+      // مثال للحالات المختلفة بناءً على رقم الطلب
+      if (orderInput === "12345") {
+        status.textContent = "✅ Your order #12345 is being prepared!";
+      } else if (orderInput === "54321") {
+        status.textContent = "🚚 Your order #54321 is out for delivery!";
+      } else {
+        status.textContent = "ℹ️ Order not found. Please check your number.";
+      }
+    }
+  </script>
+</body>
+</html>
